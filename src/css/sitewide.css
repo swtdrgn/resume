@@ -1,0 +1,9 @@
+.nav-stacked{
+  background-color: #e7e7e7;
+  text-align:center;
+  height:10000px;
+}
+
+.nav-pills>li.active>a{
+  background-color: #555;
+}
