@@ -1,0 +1,14 @@
+[
+	{
+		"type": "Platforms",
+		"list": ["Linux","Mac OS X","Windows"]
+	},
+	{
+		"type": "Languages",
+		"list": ["C++","C#","C","Java","PHP","JSP","Javascript","Go","MySQL"]
+	},
+	{
+		"type": "Development Tools",
+		"list": ["Visual Studio","git","Rational ClearCase","Rational ClearQuest","svn","gdb"]
+	}
+]

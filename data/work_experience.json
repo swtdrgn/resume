@@ -1,0 +1,64 @@
+[
+	{
+		"employer": "Software Secure",
+		"title": "Software Developer",
+		"achievements": [
+			"Created a live proctoring web application in Go, Javascript, JQuery, and MongoDB.",
+			"Created an update client in Go.",
+			"Developed cross platform modules for exam proctoring (logging/filtering keystrokes, managing running processes, detecting virtual machine environment, etc.) on Windows, Mac OS X, and Linux in C++ and Objective-C using the operating system's API (WinAPI, Xlib, Cocoa) and boost.",
+			"Created custom browser with Chromium Embedded Framework (CEF) for Windows and Mac OS X.",
+			"Created a live video help support and a queuing system using WebRTC(HTML5), PubNub, and Javascript.",
+			"Created an audio and video recording application that sends captured images and sound intensity through websockets using OpenCV, portaudio, and libwebsocket.",
+			"Maintained cmake build scripts.",
+			"Packaged applications as a *.MSI with WiX Toolset and as a *.DMG"
+		],
+		"location": {
+			"city": "Newton",
+			"state": "Massachusetts",
+			"country": "United States"
+		},
+		"date": {
+			"start": "2013-04-01T00:00:00.000Z",
+			"end": "2015-02-17T00:00:00.000Z"
+		},
+		"keywords": ["windows","mac","unix","c++","go","cmake","javascript","mongo","boost","qt","winapi","xlib","jquery","pubnub","cef3","brackets-shell","git"]
+	},
+	{
+		"employer": "Teradyne",
+		"title": "Test Development Engineer",
+		"achievements": [
+			"Maintained a GUI application (IG-XL Maintenance) for driving testing equipment to collect measurements and various supporting projects in the verification process in VB6, C#, C++, and Designer on Visual Studio.",
+			"Developed a post-processing statistical desktop application (to IG-XL Maintenance) for Windows in C#.",
+			"Generated statistical reports and warned engineers of potential problems from the analyses."
+		],
+		"location": {
+			"city": "North Reading",
+			"state": "Massachusetts",
+			"country": "United States"
+		},
+		"date": {
+			"start": "2012-06-01T00:00:00.000Z",
+			"end": "2013-02-28T00:00:00.000Z"
+		},
+		"keywords": ["windows","c++","c#","vb6","clearcase","clearquest","vs2010","winforms"]
+	},
+	{
+		"employer": "University of Massachusetts at Amherst",
+		"title": "Research Assistant",
+		"achievements": [
+			"Developed a 2D quality mesh generator that takes a 2D model, partitions it into quality triangles, and produces SVG images and MATLAB figures in C++ for Linux and Mac OS X in C++ and using OpenCascade framework for modeling and geometrical operations.",
+			"Maintained a 3D CAD and visualization software in C++ with OpenCascade, vtk, and Qt for Linux.",
+			"Created a parser in C++ that reads HFSS file format."
+		],
+		"location": {
+			"city": "Amherst",
+			"state": "Massachusetts",
+			"country": "United States"
+		},
+		"date": {
+			"start": "2008-06-01",
+			"end": "2012-05-01"
+		},
+		"keywords": ["unix","mac","c++","qt","vtk","opencascade","matlab","hfss","gdb","gprof","saturn","svn","latex"]
+	}
+]

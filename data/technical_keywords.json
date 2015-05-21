@@ -1,0 +1,143 @@
+{
+	"windows": {
+		"name": "Windows",
+		"type": "Operating System"
+	},
+	"mac": {
+		"name": "Mac OS X",
+		"type": "Operating System",
+	},
+	"unix": {
+		"name": "Unix",
+		"type": "Operating System",
+	},
+	"c++": {
+		"name": "C++",
+		"type": "Programming Language",
+	},
+	"go": {
+		"name": "Go",
+		"type": "Programming Language",
+	},
+	"cmake": {
+		"name": "cmake",
+		"type": "Programming Language",
+	},
+	"javascript": {
+		"name": "Javascript",
+		"type": "Programming Language",
+	},
+	"mongo": {
+		"name": "Mongo",
+		"type": "Database Language",
+	},
+	"boost": {
+		"name": "boost",
+		"type": "Framework",
+		"language": "C++"
+	},
+	"qt": {
+		"name": "Qt",
+		"type": "Framework",
+		"language": "C++"
+	},
+	"winapi": {
+		"name": "WinAPI",
+		"type": "Framework",
+		"language": "C++"
+	},
+	"xlib": {
+		"name": "Xlib",
+		"type": "Framework",
+		"language": "C++"
+	},
+	"jquery": {
+		"name": "JQuery",
+		"type": "Framework",
+		"language": "Javascript"
+	},
+	"pubnub": {
+		"name": "Pubnub",
+		"type": "Framework",
+		"language": "Javascript"
+	},
+	"cef3": {
+		"name": "CEF3",
+		"type": "Framework",
+		"language": "C++"
+	},
+	"brackets-shell": {
+		"name": "brackets-shell",
+		"type": "Framework",
+		"language": "C++"
+	},
+	"git": {
+		"name": "git",
+		"type": "Source Control",
+	},
+	"c#": {
+		"name": "C#",
+		"type":"Programming Language"
+	},
+	"vb6": {
+		"name": "Visual Basic 6",
+		"type": "Programming Language"
+	},
+	"clearcase": {
+		"name": "Clearcase",
+		"type": "Source Control"
+	},
+	"clearquest": {
+		"name": "Clearquest",
+		"type": "Bug Tracker"
+	},
+	"vs2010": {
+		"name": "Visual Studio 2010",
+		"type": "Integrated Development Environment"
+	},
+	"winforms": {
+		"name": "Windows Forms",
+		"type": "GUI Library",
+		"language": ".NET"
+	},
+	"vtk": {
+		"name": "VTK",
+		"type": "Framework",
+		"language": "C++"
+	},
+	"opencascade": {
+		"name": "OpenCascade",
+		"type": "Framework",
+		"language": "C++"
+	},
+	"matlab": {
+		"name": "MATLAB",
+		"type": "Programming Language"
+	},
+	"hfss": {
+		"name": "HFSS",
+		"type": "Design/Simulation Software"
+	},
+	"gdb": {
+		"name": "gdb",
+		"type": "Debugger",
+		"language": "C++"
+	},
+	"gprof": {
+		"name": "gprof",
+		"type": "Profiler",
+		"language": "C++"
+	},
+	"saturn": {
+		"name": "Saturn",
+		"type": "Profiler"
+	},
+	"svn": {
+		"name": "svn",
+		"type": "Source Control"
+	},
+	"latex": {
+		"name": "LaTeX",
+		"type": "Typesetting Language"
+	}
+}

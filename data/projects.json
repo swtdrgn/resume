@@ -1,0 +1,24 @@
+[
+	{
+		"name":"Resume",
+		"id": "resume",
+		"bodyUrl": "projects/resume.html"
+	},
+	{
+		"name":"Newegg Price Tracker",
+		"id": "newegg"
+	},
+	{
+		"name":"Game Price Tracker",
+		"id": "gameprice"
+	},
+	{
+		"name": "A Combined Quadtree/Delaunay Method for 2D Mesh Generation",
+		"id": "y2012thesis"
+	},
+	{
+		"name": "3D Two Terminals Open System Quantum Transport",
+		"id": "2009fem",
+		"description":"<a href='https://drive.google.com/file/d/0B5SUUlFps31FaHBaMHFvVWY2WFk/view?usp=sharing'></a>"
+	}
+]

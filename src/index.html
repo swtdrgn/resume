@@ -4,46 +4,141 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<script src="https://cdnjs.com/libraries/semantic-ui"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/sitewide.css">
+	<script src="js/sitewide.js"></script>
 <style>
-#name, #location, #email{
-	font-size: large;
+#name {
+	font-size: 200%;
+	font-weight: bold;
+}
+#location, #email {
+	font-size: 150%;
+	font-weight: bold;
+}
+.summary, .position, .degree, .skills{
+	line-height:120%;
+	margin: 0 1em 0 1em;
+}
+.position .employer, .position .date, .position .title, .degree .type, .degree .majors {
+	font-size: 120%;
+	font-weight: bold;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.degree .majors2 {
+	font-size: 120%;
+}
+.position .date, .degree .majors, .degree .date {
+	float: right;
+}
+.position ul {
+	display: block;
+	list-style-position: inside;
+	padding: 0px;
+}
+.position ul li {
+	text-indent: -1em;
+	padding-left: 1em;
+}
+h1{
+	font-size: 130%;
 	font-weight: bold;
 }
 </style>
-<body class="container-fluid">
-	<div class="row">
-		<div class="col-xs-2" style="height:100%;">
-			<div class="row">
-				<div class="col-xs-2" style="position:fixed; text-align:center;">
-					<ul class="nav nav-pills nav-stacked">
-						<li class="active"><a>Summary</a></li>
-						<li><a>Professional Experience</a></li>
-						<li><a>Education</a></li>
-						<li><a>Technical</a></li>
+<body data-spy="scroll" data-target="#navbar" data-offset="50" style="padding:0px; height:100%;" ng-app="page" ng-controller="pageController">
+	<%= header %>
+	<div class="hide-threshold" style="position:fixed;" id="navbar">
+		<ul class="nav nav-pills nav-stacked">
+			<li><a href="#summary">Summary</a></li>
+			<li><a href="#work">Professional Experience</a></li>
+			<li><a href="#education">Education</a></li>
+			<li><a href="#skills">Technical Skills</a></li>
+		</ul>
+	</div>
+
+	<div class="hide-threshold" id="navbar">
+	</div>
+			
+	<div class="content shrink-threshold">
+		<div style="text-align: center;">
+			<div id="name">Simon Tang</div>
+			<div id="location" ng-bind="home.city+', '+home.state"></div>
+			<div id="email" ng-bind="(name.first[0]|lowercase)+(name.middle[0]|lowercase)+(name.last[0]|lowercase)+name.first+name.middle+name.last+'@'+email.provider"></div>
+		</div>
+
+		<section id="summary">
+			<h1>Summary</h1>
+			<div class="summary" ng-bind="'Developed software professionally for '+yearsOfExperience+' with various programming languages and libraries after graduating with a Master degree.'">
+			</div>
+		</section>
+
+		<section id="work">
+			<h1>Professional Experience</h1>
+			<div class="position" ng-repeat="position in resume.professional">
+				<div class="date hide-sm-screen" align="right" ng-bind="(position.date.start|date:'MMMM yyyy')+' to '+(position.date.end|date:'MMMM yyyy')"></div>
+				<div class="employer" ng-bind="position.employer"></div>
+				<div class="title" ng-bind="position.title"></div>
+				<div class="show-sm-screen" ng-bind="(position.date.start|date:'MMMM yyyy')+' to '+(position.date.end|date:'MMMM yyyy')"></div>
+				<p>
+					<ul>
+						<li ng-repeat="achievement in position.achievements" ng-bind="achievement"></li>
 					</ul>
+					<technology ng-repeat="tech in position.keywords" data="technology[tech]" append="($last)?'':', '">
+					</technology>
+				</p>
+			</div>
+		</section>
+
+		<section id="education">
+			<h1>Education</h1>
+			<div class="degree" ng-repeat="degree in resume.education">
+				<div class="majors hide-sm-screen" ng-bind="degree.majors.join(', ')"></div>
+				<div class="type" ng-bind="degree.type"></div>
+				<div class="majors2 show-sm-screen" ng-bind="degree.majors.join(', ')"></div>
+				<div class="date hide-sm-screen" ng-bind="(degree.date.start|date:'MMMM yyyy')+' to '+(degree.date.end|date:'MMMM yyyy')"></div>
+				<div class="institution" ng-bind="degree.institution"></div>
+				<div class="show-sm-screen" ng-bind="(degree.date.start|date:'yyyy')+' - '+(degree.date.end|date:'yyyy')"></div>
+				<p>
+					<ul>
+						<li ng-repeat="achievement in degree.achievements" ng-bind-html="interpolate(achievement)"></li>
+					</ul>
+				</p>
+			</div>
+		</section>
+
+		<section id="skills">
+			<h1>Technical Skills</h1>
+			<div class="skills" ng-repeat="skillGroup in resume.skills">
+				<b ng-bind="skillGroup.type"></b>: <span ng-bind="skillGroup.list.join(', ')"></span>
+			</div>
+		</section>
+
+		<div ng-repeat="key in keyword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-if="key.modal" id="{{key.id}}">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" ng-bind="key.modal.title" style="text-align:center;"></h4>
+					</div>
+					<div class="modal-body" ng-include="'template/'+key.modal.bodyUrl"></div>
+					<div class="modal-footer" ng-if="key.modal.buttons">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<a ng-repeat="button in key.modal.buttons" class="{{button.class}}" ng-bind="button.text" href="{{button.href}}"></a>
+					</div>
 				</div>
 			</div>
 		</div>
-
-		<div class="clearfix visible-xs-block"></div>
-
-		<div>
-			<div ng-app="subscriptions" ng-controller="subscriptionController" class="content">
-					<div style="text-align: center;">
-						<div id="name">Simon Tang</div>
-						<div id="location">{{home.city}}, {{home.state}}</div>
-						<div id="email">{{name.first[0]|lowercase}}{{name.middle[0]|lowercase}}{{name.last[0]|lowercase}}{{name.first}}{{name.middle}}{{name.last}}@{{email.provider}}</div>
-					</div>
-				
-			</div>
-		</div>
 	</div>
+
 </body>
 <script>
-	var app = angular.module('subscriptions', []);
-	app.controller('subscriptionController', function($scope,$http,$compile) {
+	angular.module('page', ['sitewide']).controller('pageController', function($scope,$interpolate,$sce,$compile) {
+		$scope.interpolate = function (value) {
+			return $sce.trustAsHtml($interpolate(value)($scope));
+		};
+		$scope.tab = "resume";
 		$scope.home = {};
 		$scope.home.street = {};;
 		$scope.home.city = "Quincy";
@@ -55,6 +150,16 @@
 		$scope.name.last = "Tang";
 		$scope.email = {};
 		$scope.email.provider = "gmail.com";
+		$scope.resume = {};
+		$scope.resume.professional = <%= professional_experience %>;
+		$scope.resume.education = <%= education %>;
+		$scope.resume.skills = <%= technical_skills %>;
+		$scope.technology = <%= technologies %>;
+		//$scope.keyword.y2012thesis = "<keyword data='keyword.y2012thesis2'></keyword>"
+		$scope.keyword = <%= keywords %>
+		today = new Date;
+		months = (today.getMonth()-4+12)%12;
+		$scope.yearsOfExperience = today.getFullYear()-2012 + " years" + (months>0?" "+months+(months>1?" months":" month"):"");
 	});
 </script>
 </html>

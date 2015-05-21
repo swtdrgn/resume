@@ -1,0 +1,32 @@
+[
+	{
+		"type": "Master of Science",
+		"majors": [
+			"Electrical and Computer Engineering"
+		],
+		"institution": "University of Massachusetts at Amherst",
+		"date": {
+			"start": "2009-09-01",
+			"end": "2012-05-01"
+		},
+		"gpa": 3.71,
+		"achievements":[
+			"Presented thesis on {{keyword.y2012thesis|keyword:'A Combined Quadtree/Delaunay Method for 2D Mesh Generation'}}",
+			"Submitted an abstract to 2012 IEEE International Symposium on Antennas and Propagation and USNC-URSI National Radio Science Meeting."
+		]
+	},
+	{
+		"type": "Bachelor of Science",
+		"majors": [
+			"Computer Science",
+			"Electrical Engineering",
+			"Mathematics"
+		],
+		"institution": "University of Massachusetts at Amherst",
+		"date": {
+			"start": "2006-09-01",
+			"end": "2009-09-01"
+		},
+		"gpa": 3.32
+	}
+]

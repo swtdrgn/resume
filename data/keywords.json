@@ -1,0 +1,16 @@
+{
+	"y2012thesis": {
+		"id": "y2012thesis",
+		"modal": {
+			"title": "A Combined Quadtree/Delaunay Method for 2D Mesh Generation",
+			"bodyUrl": "y2012thesis.html",
+			"buttons": [
+				{
+					"class": "btn btn-primary",
+					"text": "Continue to Thesis",
+					"href": "http://scholarworks.umass.edu/cgi/viewcontent.cgi?article=1957&context=theses"
+				}
+			]
+		}
+	}
+}
